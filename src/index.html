@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: black">
+        <a class="navbar-brand" href="http://note.vn">My Note</a>
+        <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#note1"
+            aria-controls="note1" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavId">
+            <ul class="navbar-nav mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Danh sách Note</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#">Action 1</a>
+                        <a class="dropdown-item" href="#">Action 2</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="noteList" role="tablist" aria-multiselectable="true">
+                    <div class="card">
+                        <div class="card-header" role="tab" id="note1">
+                            <h5 class="mb-0">
+                                <a data-toggle="collapse" data-parent="#noteList" href="#noteContent1"
+                                    aria-expanded="true" aria-controls="noteContent1">
+                                    10/05/2021
+                                </a>
+                            </h5>
+                        </div>
+                        <div id="noteContent1" class="collapse in" role="tabpanel" aria-labelledby="note1">
+                            <div class="card-body">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum delectus quasi nihil.
+                                Labore delectus eius inventore magni optio cumque, voluptatibus at laudantium, eos
+                                voluptas fugiat tempore fugit ratione quasi aspernatur.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <h4>Title</h4>
+                <div class="form-group">
+                    <label for="noteTitle">Tiêu đề note</label>
+                    <input type="text" class="form-control" name="noteTitle" id="noteTitle"
+                        aria-describedby="helpIdNoteTitle" placeholder="Enter here">
+                    <small id="helpIdNoteTitle" class="form-text text-muted">Điền tiêu đề</small>
+                </div>
+                <div class="form-group">
+                    <label for="noteContent">Nội dung note</label>
+                    <textarea type="text" class="form-control" name="noteContent" id="noteContent"
+                        aria-describedby="helpIdNoteContent" placeholder="Enter here"></textarea>
+                    <small id="helpIdNoteContent" class="form-text text-muted">Điền nội dung</small>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Lưu</button>
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
