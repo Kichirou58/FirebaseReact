@@ -1,25 +1,60 @@
 import React, { Component } from 'react';
+import { noteData } from './firebaseConnect';
+import NoteItem from './NoteItem';
 
 class NoteList extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            dataFirebase: []
+        }
+    }
+
+    componentWillMount() {
+        noteData.on('value', (notes) => {
+            var arrayData = [];
+            notes.forEach(element => {
+                const key = element.key;
+                const noteTitle = element.val().noteTitle;
+                const noteContent = element.val().noteContent;
+                arrayData.push({
+                    key: key,
+                    noteTitle: noteTitle,
+                    noteContent: noteContent
+                })
+            });
+            this.setState({
+                dataFirebase: arrayData
+            })
+        })
+    }
+
+
+    
+    getData = () => {
+        if (this.state.dataFirebase) {
+            return this.state.dataFirebase.map((value, key) => {
+                return (
+                    <NoteItem
+                        key={key}
+                        i={key}
+                        note = {value}
+                        noteTitle={value.noteTitle}
+                        noteContent={value.noteContent}
+                    />
+                )
+            })
+        }
+    }
+
     render() {
         return (
             <div className="col">
                 <div id="noteList" role="tablist" aria-multiselectable="true">
-                    <div className="card">
-                        <div className="card-header" role="tab" id="note1">
-                            <h5 className="mb-0">
-                                <a data-toggle="collapse" data-parent="#noteList" href="#noteContent1" aria-expanded="true" aria-controls="noteContent1">
-                                    10/05/2021</a>
-                            </h5>
-                        </div>
-                        <div id="noteContent1" className="collapse in" role="tabpanel" aria-labelledby="note1">
-                            <div className="card-body">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum delectus quasi nihil.
-                                Labore delectus eius inventore magni optio cumque, voluptatibus at laudantium, eos
-                                voluptas fugiat tempore fugit ratione quasi aspernatur.
-                            </div>
-                        </div>
-                    </div>
+                    {
+                        this.getData()
+                    }
                 </div>
             </div>
         );

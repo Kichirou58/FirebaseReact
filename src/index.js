@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import './App.css';
 import App from './components/App.js';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import store1 from './components/Store.js';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store1}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
@@ -15,3 +17,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
